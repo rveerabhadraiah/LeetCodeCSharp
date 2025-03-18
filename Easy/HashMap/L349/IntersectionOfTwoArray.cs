@@ -15,33 +15,25 @@ namespace LeetCodeCSharp.Easy.HashMap.L349;
  */
 
 // https://leetcode.com/problems/intersection-of-two-arrays/
-// #HashSet #L349 #TwoPointers 
+// #HashTable #L349
 
 public class IntersectionOfTwoArray
 {
   private static int[] Solution(int[] nums1, int[] nums2)
   {
-    HashSet<int> num1Set = new();
-    foreach (var num1 in nums1)
+    HashSet<int> num1Set = new(nums1);
+    HashSet<int> num2Set = new(nums2);
+
+    List<int> result = new();
+    foreach (var num1 in num2Set)
     {
-      num1Set.Add(num1);
+      if (num1Set.Contains(num1))
+      {
+        result.Add(num1);
+      }
     }
     
-    HashSet<int> resultSet = new();
-    foreach (var num2 in nums2)
-    {
-      if(num1Set.Contains(num2)) 
-        resultSet.Add(num2);
-    }
-
-    var result = new int[resultSet.Count];
-    var index = 0;
-    foreach (var num in resultSet)
-    {
-      result[index++] = num;
-    }
-
-    return result;
+    return result.ToArray();
   }
   
   [Test]
