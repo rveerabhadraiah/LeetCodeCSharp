@@ -1,4 +1,4 @@
-namespace LeetCodeCSharp.Medium.ArrayAndStrings;
+namespace LeetCodeCSharp.Medium.ArrayAndStrings.L189;
 
 /**
  * Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
@@ -17,13 +17,18 @@ namespace LeetCodeCSharp.Medium.ArrayAndStrings;
  * rotate 1 steps to the right: [99,-1,-100,3]
  * rotate 2 steps to the right: [3,99,-1,-100]
  */
+// https://leetcode.com/problems/rotate-array/description/
+//  #L189
 public class RotateArray
 {
   private int[] Rotate(int[] nums, int k)
   {
-    Reverse(nums, 0, nums.Length-1);
+    // nums of array can be less or greater than k
+    k = k % nums.Length;
+    
+    Reverse(nums, 0, nums.Length - 1);
     Reverse(nums, 0, k - 1);
-    Reverse(nums, k, nums.Length-1);
+    Reverse(nums, k, nums.Length - 1);
 
     return nums;
   }
