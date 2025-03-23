@@ -24,15 +24,25 @@ public class JumpGame2
   private static int Jump(int[] nums) {
     if (nums.Length == 1) return 0; // If only one element, no jumps needed
 
-    int jumps = 0, farthest = 0, end = 0;
+    var jumps = 0; // To count the number of jumps
+    var farthest = 0; // To track the furthest we can go in the next jump
+    var currentEnd = 0; // To track the furthest we can go in the current jump
 
-    for (var i = 0; i < nums.Length - 1; i++) {
-      farthest = Math.Max(farthest, i + nums[i]);
+    for (var i = 0; i < nums.Length - 1; i++) // We don't need to jump from the last index
+    { 
+      farthest = Math.Max(farthest, i + nums[i]); // Find the farthest we can jump from here
 
-      if (i != end) continue; // We reached the end of our jump range
-      if (end == farthest) return -1; // If we can't go further, return -1 (unreachable)
-      jumps++;
-      end = farthest;
+      // If we have reached the end of the current jump range
+      if (i == currentEnd)
+      {
+        jumps++;                   // Increment jumps
+        currentEnd = farthest;     // Move to the farthest position we can reach
+
+        // If currentEnd reaches or exceeds the last index, we are done
+        if (currentEnd >= nums.Length - 1)
+          break;
+      }
+
     }
     
     return jumps;
