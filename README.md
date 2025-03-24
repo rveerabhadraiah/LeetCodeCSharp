@@ -121,16 +121,15 @@
     }
     
     // Insert a node iteratively
-    public void Insert(int data)
+    public Node Insert(int data, Node root)
     {
         Node newNode = new Node(data);
-        if (Root == null)
+        if (root == null)
         {
-            Root = newNode;
-            return;
+            return newNode; // Return new root if tree was empty
         }
 
-        Node current = Root, parent = null;
+        Node current = root, parent = null;
         while (current != null)
         {
             parent = current;
@@ -139,14 +138,16 @@
             else if (data > current.Data)
                 current = current.Right;
             else
-                return; // No duplicates in BST
+                return root; // No duplicates, return unchanged root
         }
 
         if (data < parent.Data)
             parent.Left = newNode;
         else
             parent.Right = newNode;
-    }
+    
+        return root; // Always return the root of the tree
+}
 
     // Search for a value in the BST using recursion
     public bool Search(Node root, int key)
@@ -163,9 +164,9 @@
     }
     
     // Search a node iteratively
-    public bool Search(int key)
+    public bool Search(int key, Node root)
     {
-        Node current = Root;
+        Node current = root;
         while (current != null)
         {
             if (key == current.Data)
