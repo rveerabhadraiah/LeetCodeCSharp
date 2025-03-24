@@ -5,6 +5,9 @@
 
 ```csharp
     // preorder traversal
+    //    50
+    //   /  \
+    //  30   70
     public void Preorder(Node node)
     {
         if (node == null)
@@ -16,6 +19,9 @@
     }
     
     // Postorder Traversal (Recursive)
+    //    50
+    //   /  \
+    //  30   70
     public void Postorder(Node node)
     {
         if (node == null)
@@ -27,6 +33,9 @@
     }
     
     // Depth-First Search (DFS) - Inorder Traversal (Left → Root → Right)
+    //    50
+    //   /  \
+    //  30   70
     public void DFS(Node node)
     {
         if (node == null)
@@ -38,6 +47,9 @@
     }
     
     // Inorder Traversal using a Stack (Iterative)
+    //    50
+    //   /  \
+    //  30   70
     public void Inorder(Node root)
     {
         if (Root == null) return;
@@ -121,6 +133,11 @@
     }
     
     // Insert a node iteratively
+    //    50
+    //   /  \
+    //  30   70
+    // Tree after inserting 70
+
     public Node Insert(int data, Node root)
     {
         Node newNode = new Node(data);
@@ -147,9 +164,14 @@
             parent.Right = newNode;
     
         return root; // Always return the root of the tree
-}
+    }
 
     // Search for a value in the BST using recursion
+    //     50
+    //   /  \
+    //  30   70
+    //  /
+    // 20
     public bool Search(Node root, int key)
     {
         if (root == null)
