@@ -28,7 +28,7 @@ public class MaxDepthOfBinaryTree
     var rightDepth = MaxDepth(root.Right);
 
     // Return the maximum depth between left and right subtrees, plus 1 for the current node
-    return Math.Max(leftDepth, rightDepth) + 1;
+    return System.Math.Max(leftDepth, rightDepth) + 1;
   }
 
   [Test]

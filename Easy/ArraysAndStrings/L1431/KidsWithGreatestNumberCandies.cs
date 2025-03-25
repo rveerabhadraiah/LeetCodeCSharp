@@ -80,7 +80,7 @@ public class KidsWithGreatestNumberCandies
     var maxCandies = 0;
     foreach (var candy in candies)
     {
-      maxCandies = Math.Max(maxCandies, candy);
+      maxCandies = System.Math.Max(maxCandies, candy);
     }
 
     return candies.Select(candy => candy + extraCandies >= maxCandies).ToList();

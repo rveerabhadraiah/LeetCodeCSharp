@@ -47,7 +47,7 @@ public class IntersectionOfTwoArray2
     {
       if(num2Map.ContainsKey(key))
       {
-        var minCount = Math.Min(num1Map[key], num2Map[key]);
+        var minCount = System.Math.Min(num1Map[key], num2Map[key]);
         while (minCount-- > 0)
         {
           result.Add(key);

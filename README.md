@@ -166,7 +166,7 @@
         return root; // Always return the root of the tree
     }
 
-    // Search for a value in the BST using recursion
+    // Search for a value in the binary search tree using recursion
     //     50
     //   /  \
     //  30   70
