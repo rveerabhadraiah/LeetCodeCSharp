@@ -22,7 +22,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Medium\HashMap\" />
       <Folder Include="Medium\LinkedList\" />
     </ItemGroup>
 

@@ -38,8 +38,8 @@ public class WordPattern
 
     for (var i = 0; i < pattern.Length; i++)
     {
-      string word = words[i];
-      char pat = pattern[i];
+      var word = words[i];
+      var pat = pattern[i];
 
       if (patToWordMap.ContainsKey(pat) && patToWordMap[pat] != word) return false;
       if (wordToPatMap.ContainsKey(word) && wordToPatMap[word] != pat) return false;

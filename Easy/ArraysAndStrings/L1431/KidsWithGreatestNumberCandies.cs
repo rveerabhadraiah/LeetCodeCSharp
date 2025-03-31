@@ -33,7 +33,7 @@ Explanation:
 // #Array #L1431
 public class KidsWithGreatestNumberCandies
 {
-  // Solution-1
+  // Solution-1 Brute-Force
   private static IList<bool> KidsWithCandies(int[] candies, int extraCandies)
   {
     var result = new bool[candies.Length];
@@ -78,6 +78,7 @@ public class KidsWithGreatestNumberCandies
   private static IList<bool> KidsWithCandies_1(int[] candies, int extraCandies)
   {
     var maxCandies = 0;
+    // find kid with most candies
     foreach (var candy in candies)
     {
       maxCandies = System.Math.Max(maxCandies, candy);

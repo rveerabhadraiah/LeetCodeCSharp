@@ -1,4 +1,4 @@
-namespace LeetCodeCSharp.Medium.ArrayAndStrings.L128;
+namespace LeetCodeCSharp.Medium.HashMap.L128;
 /*
  * Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
  * You must write an algorithm that runs in O(n) time.
@@ -81,6 +81,6 @@ public class LongestConsecutiveSequence
   public void Test5()
   {
     var result = LongestConsecutive([1, 0, -1]);
-    Assert.That(result, Is.EqualTo(2));
+    Assert.That(result, Is.EqualTo(3));
   }
 }

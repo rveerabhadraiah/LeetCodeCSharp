@@ -20,7 +20,7 @@ namespace LeetCodeCSharp.Easy.ArraysAndStrings.L605;
  * Output: true
  *
  * Edge CaseExample 4:
- * Input: flowerbed = [0,0, 0], n = 1 // we can place pot at index 0 & 2 => [1,0,1]
+ * Input: flowerbed = [0,0, 0], n = 2 // we can place pot at index 0 & 2 => [1,0,1]
  * Output: true
  *
  * tip: create a new array with 0 (empty) at index 0 and index n+1
@@ -41,17 +41,18 @@ public class CanPlaceFlowers
     }
 
     const int empty = 0;
+    var noOfFlowersPlanted = n;
     for (var i = 1; i < newFlowerBed.Length-1; i++)
     {
-      if (n == 0) return true;
+      if (noOfFlowersPlanted == 0) return true;
       if (newFlowerBed[i] == empty && (newFlowerBed[i - 1] == empty && newFlowerBed[i + 1] == empty) )
       {
         newFlowerBed[i] = 1;
-        n--;
+        noOfFlowersPlanted--;
       }
     }
     
-    return n == 0;
+    return noOfFlowersPlanted == 0;
   }
 
 

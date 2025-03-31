@@ -1,4 +1,4 @@
-namespace LeetCodeCSharp.Medium.L3;
+namespace LeetCodeCSharp.Medium.SlidingWindow.L3;
 
 
 /*

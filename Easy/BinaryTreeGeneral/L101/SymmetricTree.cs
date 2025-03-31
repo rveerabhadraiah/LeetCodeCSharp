@@ -9,6 +9,15 @@ namespace LeetCodeCSharp.Easy.BinaryTreeGeneral.L101;
 // L101 #BinaryTree
 public class SymmetricTree
 {
+  
+  /**
+  *      1            
+  *     / \          
+  *    2   2       
+  *   /\   /\     
+  *  3  4 4  3    
+  *
+  */
   public bool IsSymmetric(TreeNode? root)
   {
     // If the tree is empty, it's symmetric by definition
